@@ -18,3 +18,32 @@ il testo digitato viene letto e utilizzato per creare un nuovo todo, che quindi 
 //richiamare Vue
 
 const { createApp } = Vue;
+
+createApp({
+
+    data() {
+        return {
+
+            list: [
+
+                {
+                    text: "Andare in vacanza",
+                    done: false
+                },
+                {
+                    text: "Fare i compiti",
+                    done: true
+                },
+                {
+                    text: "Fare il bucato",
+                    done: true
+                },
+                {
+                    text: "Fare la spesa",
+                    done: true
+                }
+
+            ]
+        }
+    }
+}).mount('#app')

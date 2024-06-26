@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <!-- link fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
     <!-- link Vue -->
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 
@@ -12,6 +15,33 @@
     <title>Todo List - Vue</title>
 </head>
 <body>
+
+    <div id="app">
+
+        <div id="container">
+
+            <div id="box-container">
+                <h1>To do List</h1>
+
+                <form action="#">
+                    <input type="text">
+                    <button>Aggiungi</button>
+                </form>
+
+                <div id="list-container">
+                    <ul>
+                        <li class="flex-list" v-for="(item, index) in list" :key="index">
+                            <a href="#" :class="{done: item.done}">{{ item.text }}</a>
+                            <i class="fa-solid fa-xmark"></i>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
     
     <!-- link js -->
      <script src="js/main.js"></script>
