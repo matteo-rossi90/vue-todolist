@@ -24,10 +24,24 @@ createApp({
     data() {
         return {
 
+            inputError: false,
+            newObj: {
+
+                text: '',
+                done: false
+            },
             list: [
 
                 {
                     text: "Andare in vacanza",
+                    done: false
+                },
+                {
+                    text: "Portare a spasso il cane",
+                    done: false
+                },
+                {
+                    text: "Uscire",
                     done: false
                 },
                 {
@@ -44,6 +58,32 @@ createApp({
                 }
 
             ]
+        }
+    },
+    methods: {
+
+        //aggiungi nuovo compito nella lista
+        addObj(){
+
+            //creare una condizione in cui possono essere aggiunti solo oggetti con parole >= a 5 caratteri e non sono ammessi campi vuoti
+            if (this.newObj.text !== '' && this.newObj.text.length >= 5) {
+                
+                const newItem = {
+                    text: this.newObj.text,
+                    done: this.newObj.done
+                };
+                this.list.unshift(newItem);
+
+                //svuotare l'elemento inserito
+                this.newObj.text = '';
+                
+            }else{
+                this.inputError = true;
+            }
+        },
+        //rimuovi compito nella lista al click della "x"
+        removeObj(index){
+            this.list.splice(index, 1)
         }
     }
 }).mount('#app')

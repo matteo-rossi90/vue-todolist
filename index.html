@@ -24,17 +24,20 @@
                 <h1>To do List</h1>
 
                 <form action="#">
-                    <input type="text">
-                    <button>Aggiungi</button>
+                    <input type="text" placeholder="Aggiungi un nuovo compito" v-model="newObj.text">
+                    <button @click="addObj">Aggiungi</button>
                 </form>
 
+                <div id="error" v-if="inputError">Devi immettere un elemento corretto</div>
+
                 <div id="list-container">
-                    <ul>
+                    <ul v-if="list.length">
                         <li class="flex-list" v-for="(item, index) in list" :key="index">
-                            <a href="#" :class="{done: item.done}">{{ item.text }}</a>
-                            <i class="fa-solid fa-xmark"></i>
+                            <a href="#" :class="{crossed: item.done}">{{ item.text }}</a>
+                            <i class="fa-solid fa-xmark" @click="removeObj(index)"></i>
                         </li>
                     </ul>
+                    <p v-else>Non ci sono compiti nella lista.</p>
                 </div>
 
             </div>

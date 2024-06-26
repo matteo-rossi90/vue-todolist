@@ -51,8 +51,15 @@ li a {
     font-size:large;
 }
 
-/* permette di discriminare tra gli elementi della lista che hanno proprietà "done: true" da "done: flase"; 
+/* permette di discriminare gli elementi della lista che hanno proprietà "done: true" da "done: flase"; 
 se "done: true" allora si applica la classe, che trasforma il testo in barrato */
-.done{
+.crossed{
     text-decoration: line-through;
+}
+
+/* proprietà del messaggio di errore */
+#error{
+    padding: 10px;
+    margin: 10px 0;
+    color: red;
 }
