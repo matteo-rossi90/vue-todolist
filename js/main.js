@@ -76,6 +76,7 @@ createApp({
 
                 //svuotare l'elemento inserito
                 this.newObj.text = '';
+                this.inputError = false;
                 
             }else{
                 this.inputError = true;
