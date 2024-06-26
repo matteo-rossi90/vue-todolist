@@ -1,0 +1,103 @@
+/* regole principali */
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#list-container{
+    background-color: rgb(228, 228, 228);
+    border-radius: 10px;
+    padding: 15px;
+}
+
+#container{
+    width: 40%;
+    margin: 0 auto;
+}
+
+#box-container{
+    text-align: center;
+    margin: 20px 0;
+}
+
+#box-form{
+    margin: 35px 0;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+input{
+    width: 70%;
+    border: 1px solid rgb(173, 173, 173);
+}
+
+button{
+    width: 30%;
+    border: none;
+    cursor: pointer;
+}
+
+#btn-send{
+    color: white;
+    font-weight: 800;
+    background-color: dodgerblue;
+}
+
+#btn-send:hover{
+    opacity: 0.8;
+}
+
+input,
+button{
+    padding: 8px 10px;
+    border-radius: 10px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 20px 0;
+}
+
+ul li {
+    padding: 15px 10px;
+    border-bottom: 1px solid rgb(173, 173, 173);
+}
+
+li a {
+    text-decoration: none;
+    color: black;
+}
+
+li{
+    cursor:pointer;
+}
+
+li:hover{
+    background-color: rgba(189, 189, 189, 0.6);
+}
+
+.flex-list{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.fa-xmark{
+    font-size:large;
+}
+
+/* permette di discriminare gli elementi della lista che hanno proprietà "done: true" da "done: flase"; 
+se "done: true" allora si applica la classe, che trasforma il testo in barrato */
+.crossed{
+    text-decoration: line-through;
+}
+
+/* proprietà del messaggio di errore */
+#error{
+    padding: 10px;
+    margin: 10px 0;
+    color: red;
+}

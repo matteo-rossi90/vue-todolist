@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- link fontawesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <!-- link Vue -->
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+    <!-- link css -->
+    <link rel="stylesheet" href="css/style.css">
+    <title>Todo List - Vue - Bonus</title>
+</head>
+<body>
+
+    <div id="app">
+
+        <div id="container">
+
+            <div id="box-container">
+                <h1>To do List</h1>
+
+                <div id="box-form">
+                    <input type="text" placeholder="Aggiungi un nuovo compito" v-model="newObj.text" @keyup.enter="addObj">
+                    <button id="btn-send" @click="addObj">Aggiungi</button>
+                </div>
+
+                <!-- messaggio di errore -->
+                <div id="error" v-if="inputError">Devi immettere un elemento corretto</div>
+
+                <div id="list-container">
+
+                    <!-- lista degli oggetti -->
+                    <ul v-if="list.length">
+                        <li class="flex-list" v-for="(item, index) in list" :key="index">
+                            <a href="#" :class="{crossed: item.done}">{{ item.text }}</a>
+                            <i class="fa-solid fa-xmark" @click="removeObj(index)"></i>
+                        </li>
+                    </ul>
+                    <!-- messaggio che appare se non ci sono oggetti -->
+                    <p v-else>Non ci sono compiti nella lista.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    
+    <!-- link js -->
+     <script src="js/main.js"></script>
+</body>
+</html>
