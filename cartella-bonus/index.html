@@ -24,7 +24,8 @@
                 <h1>To do List</h1>
 
                 <div id="box-form">
-                    <input type="text" placeholder="Aggiungi un nuovo compito" v-model="newObj.text" @keyup.enter="addObj">
+                    <label>Aggiungi un nuovo compito</label>
+                    <input type="text" v-model="newObj.text" @keyup.enter="addObj">
                     <button id="btn-send" @click="addObj">Aggiungi</button>
                 </div>
 
@@ -36,7 +37,7 @@
                     <!-- lista degli oggetti -->
                     <ul v-if="list.length">
                         <li class="flex-list" v-for="(item, index) in list" :key="index">
-                            <a href="#" :class="{crossed: item.done}">{{ item.text }}</a>
+                            <a href="#" :class="{crossed: item.done}" @click="changeList(index)">{{ item.text }}</a>
                             <i class="fa-solid fa-xmark" @click="removeObj(index)"></i>
                         </li>
                     </ul>

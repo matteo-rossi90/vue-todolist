@@ -32,6 +32,7 @@
 input{
     width: 70%;
     border: 1px solid rgb(173, 173, 173);
+    position: relative;
 }
 
 button{
@@ -47,13 +48,22 @@ button{
 }
 
 #btn-send:hover{
-    opacity: 0.8;
+    box-shadow: 1px 1px 3px 1px rgba(0,0,0,0.2)
 }
 
 input,
 button{
-    padding: 8px 10px;
+    padding: 12px 10px;
     border-radius: 10px;
+}
+
+label{
+    position:absolute;
+    transform: translate(10px, -7px);
+    background-color: white;
+    padding: 2px;
+    font-size: 10px;
+    z-index: 900;
 }
 
 ul {

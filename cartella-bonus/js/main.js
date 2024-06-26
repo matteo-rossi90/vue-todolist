@@ -37,7 +37,7 @@ createApp({
                     done: false
                 },
                 {
-                    text: "Portare a spasso il cane",
+                    text: "Portare fuori il cane",
                     done: false
                 },
                 {
@@ -76,15 +76,20 @@ createApp({
 
                 //svuotare l'elemento inserito
                 this.newObj.text = '';
+                //rimuovere il messaggio di errore se l'utente inserisce gli oggetti correttamente
                 this.inputError = false;
                 
             }else{
                 this.inputError = true;
             }
         },
-        //rimuovi compito nella lista al click della "x"
+        //rimuovi il compito dalla lista al click della "x"
         removeObj(index){
             this.list.splice(index, 1)
+        },
+        //cambiare il testo da barrato a normale e viceversa al click dell'oggetto in lista
+        changeList(index){
+            this.list[index].done = !this.list[index].done
         }
     }
 }).mount('#app')
